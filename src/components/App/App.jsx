@@ -1,7 +1,7 @@
 import './App.module.css'
 
 import { useState, useEffect } from 'react';
-import Descriptions from '../Descriptions/Descriptions.jsx';
+import Description from '../Description/Description.jsx';
 import Feedback from '../Feedback/Feedback.jsx';
 import Options from '../Options/Options.jsx';
 import Notification from '../Notification/Notification.jsx';
@@ -39,12 +39,12 @@ function App() {
 
   return (
     <>
-      <Descriptions />
+      <Description />
       <Options updateFeedback={updateFeedback} totalFeedback={totalFeedback} handleReset={handleReset} />
       {totalFeedback > 0 ? (
         <>
           <Feedback feedback={feedback} totalFeedback={totalFeedback} positiveFeedback={positiveFeedback} />
-          <Notification />
+      
         </>
       ) : (
         <Notification message="No feedback yet." />
